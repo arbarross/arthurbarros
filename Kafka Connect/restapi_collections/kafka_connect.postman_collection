@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "3e7a7a11-9507-43ad-8519-004fe9bb4892",
+		"name": "kafka_connect_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Connectors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Connector",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"connect-cdb-paper_orders_poc-source\",\n    \"config\": {\n        \"connector.class\": \"io.confluent.connect.jdbc.JdbcSourceConnector\",\n        \"errors.log.include.messages\": \"true\",\n        \"incrementing.column.name\": \"idt_paper_orders\",\n        \"connection.password\": \"Pag$123!\",\n        \"tasks.max\": \"1\",\n        \"config.providers\": \"file\",\n        \"table.types\": \"VIEW\",\n        \"table.whitelist\": \"cdbapi_adm.vw_paper_orders\",\n        \"mode\": \"incrementing\",\n        \"topic.prefix\": \"cdc.db.investments.conciliation.cdbapiadm.\",\n        \"tables\": \"cdbapi_adm.vw_paper_orders\",\n        \"poll.interval.ms\": \"120000\",\n        \"db.timezone\": \"America/Sao_Paulo\",\n        \"value.converter\": \"io.confluent.connect.avro.AvroConverter\",\n        \"errors.log.enable\": \"true\",\n        \"key.converter\": \"org.apache.kafka.connect.storage.StringConverter\",\n        \"validate.non.null\": \"false\",\n        \"value.converter.schema.registry.url\": \"http://localhost:8081\",\n        \"key.converter.schemas.enable\": \"false\",\n        \"task.class\": \"io.confluent.connect.jdbc.source.JdbcSourceTask\",\n        \"connection.user\": \"cdbapi_dexter\",\n        \"use.latest.version\": \"true\",\n        \"value.converter.schemas.enable\": \"true\",\n        \"name\": \"connect-cdb-paper_orders_poc-source\",\n        \"numeric.mapping\": \"best_fit\",\n        \"connection.url\": \"jdbc:postgresql://bd-cdb-api-qa.caeyhoi9lhhl.us-east-1.rds.amazonaws.com:5432/cdbapi\",\n        \"key.converter.schema.registry.url\": \"http://localhost:8081\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8083/connectors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connectors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "connect-status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/connectors/:name/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connectors",
+						":name",
+						"status"
+					],
+					"variable": [
+						{
+							"key": "name",
+							"value": "my-sql-connector"
+						}
+					]
+				},
+				"description": "verifica o status do log dos conectores"
+			},
+			"response": []
+		}
+	]
+}
