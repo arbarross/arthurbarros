@@ -1,32 +1,32 @@
 version: '3'
 services:
-#  mysql:
-#    image: wesleywillians/mysql-kafka-connect:latest
-#    container_name: mysql
-#    command: --innodb-use-native-aio=0
-#    tty: true
-#    restart: always
-#    ports:
-#      - "33600:3306"
-#    environment:
-#      - MYSQL_DATABASE=eldorado
-#      - MYSQL_ROOT_PASSWORD=root
-#      - MYSQL_USER=root
-#    extra_hosts:
-#      - "host.docker.internal:172.17.0.1"
-#
-#  postgres:
-#    image: postgres:13
-#    hostname: postgres
-#    container_name: postgres
-#    ports:
-#      - "5432:5432"
-#    environment:
-#      POSTGRES_PASSWORD: admin
-#      POSTGRES_DB: eldorado_sync
-#      POSTGRES_USER: admin
-#    extra_hosts:
-#      - "host.docker.internal:172.17.0.1"
+  mysql:
+    image: wesleywillians/mysql-kafka-connect:latest
+    container_name: mysql
+    command: --innodb-use-native-aio=0
+    tty: true
+    restart: always
+    ports:
+      - "33600:3306"
+    environment:
+      - MYSQL_DATABASE=eldorado
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=root
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+
+  postgres:
+    image: postgres:13
+    hostname: postgres
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: eldorado_sync
+      POSTGRES_USER: admin
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
 
   zookeeper:
     image: confluentinc/cp-zookeeper:5.5.0
@@ -144,6 +144,7 @@ services:
         echo "Installing connector plugins"
         confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:latest
         confluent-hub install --no-prompt debezium/debezium-connector-mysql:1.4.0
+        confluent-hub install --no-prompt debezium/debezium-connector-postgresql:2.1.4
         confluent-hub install --no-prompt confluentinc/connect-transforms:latest
         #
         
