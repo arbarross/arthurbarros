@@ -1,6 +1,6 @@
 ###  DEMOS KAFKA CONNECT 
 ## Docker Compose
-# - docker compose up -d
+- docker compose up -d
 
 ### Acces MySqlSGBD
 ## 
