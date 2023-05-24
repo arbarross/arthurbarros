@@ -1,8 +1,8 @@
 #   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original-wordmark.svg" width="40" height="40"/> DEMOS KAFKA CONNECT 
-###  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" width="40" height="40"/> Docker Compose 
+###  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" width="40" height="40"/> Compose 
 - docker compose up -d
 #
-## Acessar MySqlSGBD
+## Acessar <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"  width="40" height="40"/> 
 - docker exec -it mysql bash
 - mysql -uroot -p
 - password:| |
