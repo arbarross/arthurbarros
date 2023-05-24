@@ -1,4 +1,4 @@
-###  DEMOS KAFKA CONNECT 
+#  DEMOS KAFKA CONNECT 
 ## Docker Compose
 - docker compose up -d
 
