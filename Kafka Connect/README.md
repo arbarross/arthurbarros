@@ -13,3 +13,4 @@
 
 ### Inserindo Dados
 - insert into colaboradores (num_cpf, des_name, des_genero, dat_nascimento) values (12345678910, 'Joao Paulo Silva', 'M','1992-09-28');
+#
