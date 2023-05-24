@@ -6,6 +6,7 @@
 - docker exec -it mysql bash
 - mysql -uroot -p
 - password:| |
+####Para acessar seu banco
 - use: eldorado
 
 ### Criando Tabela
