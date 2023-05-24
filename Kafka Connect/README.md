@@ -1,5 +1,5 @@
-#  DEMOS KAFKA CONNECT 
-### Docker Compose
+#   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original-wordmark.svg" width="40" height="40"/> DEMOS KAFKA CONNECT 
+###  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" width="40" height="40"/> Docker Compose 
 - docker compose up -d
 #
 ## Acessar MySqlSGBD
