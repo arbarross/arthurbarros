@@ -142,10 +142,8 @@ services:
       - -c
       - |
         echo "Installing connector plugins"
-        confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:latest
         confluent-hub install --no-prompt debezium/debezium-connector-mysql:1.4.0
         confluent-hub install --no-prompt debezium/debezium-connector-postgresql:2.1.4
-        confluent-hub install --no-prompt confluentinc/connect-transforms:latest
         #
         
         echo "Copy file ..."
@@ -165,5 +163,5 @@ services:
         #
         # Don't exit
         sleep infinity
-    extra_hosts:
-      - "host.docker.internal:172.17.0.1"
+#    extra_hosts:
+#      - "host.docker.internal:172.17.0.1"
